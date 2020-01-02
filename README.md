@@ -54,10 +54,10 @@ nest new 專案名稱
   └ main.ts
 + test
 ```
-<ol>
-<li>main.ts</li> 程式進入點  功能: `設定全域共用的module，如:db連線用的typeorm`
-<li>app.controller.ts</li>  功能: `對外接口，也可指定渲染頁面，如:mssr的router, swagger`
-<li>app.module.ts</li>      功能: `包裝controller與service給外部使用`
-<li>app.service.ts</li>     功能: `對DB做CRUD，如:mssr的api`
-</ol>
+
+* main.ts 程式進入點   功能: 設定全域共用的module，如:db連線用的typeorm
+* app.controller.ts   功能: 對外接口，也可指定渲染頁面，如:mssr的router, swagger
+* app.module.ts       功能: 包裝controller與service給外部使用
+* app.service.ts      功能: 對DB做CRUD，如:mssr的api
+
 
