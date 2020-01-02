@@ -29,10 +29,20 @@ nest new 專案名稱
 ## 修改launch.json以便debug
 
 ```bash
-"type": "node",
-"request": "launch",
-"name": "Debug Nest Framework",
-"runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
-"args": ["${workspaceFolder}/src/main.ts"],
-"autoAttachChildProcesses": true
+ "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Nest Framework",
+            "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+            "args": ["${workspaceFolder}/src/main.ts"],
+            "autoAttachChildProcesses": true
+        }
+    ]
+```
+
+## 專案結構&主要功能
+```bash
+
 ```
