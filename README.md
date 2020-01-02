@@ -86,7 +86,6 @@ typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -
 
 ## 與DB建立連線
 安裝typeorm，以MySQL為例，可參考 [官方文件](https://docs.nestjs.com/techniques/database)
-[typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
 ```
 npm install --save @nestjs/typeorm typeorm mysql
 ```
@@ -140,4 +139,5 @@ async function bootstrap() {
 }
 bootstrap();
 ```
-##
+## TypeORM CRUD
+可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
