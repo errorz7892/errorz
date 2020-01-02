@@ -24,10 +24,15 @@ $ npm install -g typescript
 # 建立
 nest new 專案名稱
 *專案名稱例如: myAPP，在自動建立時會轉換為my_app*
+```
 
-# watch mode
-$ npm run start:dev
+# 為了方便debug，修改launch.json
 
-# production mode
-$ npm run start:prod
+```bash
+"type": "node",
+"request": "launch",
+"name": "Debug Nest Framework",
+"runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+"args": ["${workspaceFolder}/src/main.ts"],
+"autoAttachChildProcesses": true
 ```
