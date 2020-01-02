@@ -43,6 +43,7 @@ nest new 專案名稱
 ```
 
 ## 專案結構
+類似MVC的架構
 ```bash
 # 基本結構
 + node_modules
@@ -54,8 +55,9 @@ nest new 專案名稱
 + test
 ```
 <ol>
-<li>main.ts</li> 程式進入點
-<li>McHale</li>
-<li>Parish</li>
+<li>main.ts</li> 程式進入點  功能:
+<li>app.controller.ts</li>  功能:
+<li>app.module.ts</li>      功能:包裝controller與service給外部使用
+<li>app.service.ts</li>     功能:對DB做CRUD，如:mssr的api
 </ol>
 
