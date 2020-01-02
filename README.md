@@ -26,7 +26,7 @@ nest new 專案名稱
 *專案名稱例如: myAPP，在自動建立時會轉換為my_app*
 ```
 
-# 為了方便debug，修改launch.json
+## 為了方便debug，修改launch.json
 
 ```bash
 "type": "node",
