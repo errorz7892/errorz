@@ -145,3 +145,10 @@ bootstrap();
 
 ## TypeORM CRUD
 可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
+
+## 可能會用到的Decorators...
+* provider
+* middleware
+* guard
+* Exception filters
+* pipe
