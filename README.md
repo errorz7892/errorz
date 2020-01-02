@@ -90,3 +90,30 @@ typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -
 npm install --save @nestjs/typeorm typeorm mysql
 ```
 載入TypeORM模組
+```
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
+@Module({
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: '1234',
+      database: 'world',
+      entities: [
+         '../entities/*{.ts,.js}'
+       ],
+      synchronize: true,
+    }),
+  ],
+})
+export class AppModule {}
+```
+## 安裝Swagger
+安裝
+```
+ npm install --save @nestjs/swagger swagger-ui-express
+```
