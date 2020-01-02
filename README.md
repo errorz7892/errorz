@@ -42,7 +42,7 @@ nest new 專案名稱
 ]
 ```
 
-## 專案結構&主要功能
+## 專案結構
 ```bash
 # 基本結構
 + node_modules
@@ -52,11 +52,10 @@ nest new 專案名稱
   └ app.service.ts
   └ main.ts
 + test
-
-# main.ts
-程式進入點
-
-## Controller.ts
-asd
-
 ```
+<ol>
+<li>main.ts</li> 程式進入點
+<li>McHale</li>
+<li>Parish</li>
+</ol>
+
