@@ -113,7 +113,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 export class AppModule {}
 ```
 ## 安裝Swagger
-安裝
+安裝，可參考 [官方文件[(https://docs.nestjs.com/recipes/swagger)
 ```
  npm install --save @nestjs/swagger swagger-ui-express
 ```
