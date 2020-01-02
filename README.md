@@ -8,7 +8,7 @@
 
 [Nest Github](https://github.com/nestjs/nest)
 
-# 安裝&環境設定
+## 安裝&環境設定
 
 ```bash
 # 安裝nestjs
@@ -18,7 +18,7 @@ npm i -g @nestjs/cli
 $ npm install -g typescript
 ```
 
-# 新建專案
+## 新建專案
 
 ```bash
 # 建立
@@ -26,8 +26,8 @@ nest new 專案名稱
 *專案名稱例如: myAPP，在自動建立時會轉換為my_app*
 ```
 
-# 修改launch.json以便debug
-
+## debug
+修改launch.json
 ```bash
 "version": "0.2.0",
 "configurations": [
@@ -42,7 +42,7 @@ nest new 專案名稱
 ]
 ```
 
-# 專案結構
+## 專案結構
 
 ```bash
 # 基本結構
@@ -63,14 +63,14 @@ nest new 專案名稱
 * app.service.ts      
   功能：演算法與邏輯運算、對DB做CRUD，如：mssr的api
 
-# 轉換現有DB為model
+## 轉換現有DB為model
 使用套件[typeorm-model-generator](https://www.npmjs.com/package/typeorm-model-generator)
 
-## 安裝
+### 安裝
 ```
 npm i -g typeorm-model-generator
 ```
-## 轉換
+### 轉換
 ```bash
 # 格式
 typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x
