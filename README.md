@@ -117,3 +117,26 @@ export class AppModule {}
 ```
  npm install --save @nestjs/swagger swagger-ui-express
 ```
+載入swagger，修改main.ts
+```
+import { NestFactory } from '@nestjs/core';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  const options = new DocumentBuilder()
+    .setTitle('ETS example')
+    .setDescription('The ETS API description')
+    .setVersion('1.0')
+    .addTag('ETS')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
