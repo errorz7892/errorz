@@ -18,11 +18,12 @@ npm i -g @nestjs/cli
 $ npm install -g typescript
 ```
 
-## Running the app
+## 新建專案
 
 ```bash
-# development
-$ npm run start
+# 建立
+nest new 專案名稱
+*專案名稱例如: myAPP，在自動建立時會轉換為my_app*
 
 # watch mode
 $ npm run start:dev
