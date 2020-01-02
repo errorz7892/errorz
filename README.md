@@ -138,7 +138,11 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
+
+### 注意
+[swagger 新舊版 detector 命名對照](https://docs.nestjs.com/recipes/swagger#migration-to-40)
+
+
 ```
-*[swagger detector 新舊版命名對照](https://docs.nestjs.com/recipes/swagger#migration-to-40)*
 ## TypeORM CRUD
 可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
