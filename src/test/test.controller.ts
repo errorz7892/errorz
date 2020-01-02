@@ -1,20 +1,39 @@
-import { Controller, Get, Param, Req } from '@nestjs/common';
+import { Controller, Get, Param, Req, Query, Post, Body } from '@nestjs/common';
 import { Request } from 'express';
+import { ApiTags, ApiProperty, ApiCreatedResponse } from '@nestjs/swagger';
+import { TestService } from './test.service';
+import { account } from '../../entities/account';
+import { AccountDto} from './dto/account.dto';
 
-@Controller('test')
+class accountDTO {
+    @ApiProperty({
+        required: true,
+        description:'userAccount',
+    })
+    account: string
+}
+
+@Controller('accountRouter')
 export class TestController {
-    @Get(':id')
-    findOne(@Param('id') id: string) {
-        return `this #${id} product`;
-    }
-
-    @Get('/abc/:id')
-    findOneAbc(@Param('id') id: string) {
-        return  `this is abc ${id} product`;
-    }
-
+    constructor(private testService: TestService) {}
+    
     @Get()
-    findOrg(@Req() res: Request) {
-        return [1,2,3];
+    @ApiTags('accountApi')
+    getAccount(@Query() query: accountDTO) {
+        return this.testService.findAcPwd(query.account);
+    }
+
+    @Get('/abc/:id&:anc')
+    findOneAbc(@Param('id') id: string) {
+        return  `key in abc id= ${id}`;
+    }
+
+    @Post()
+    @ApiTags('accountApi')
+    @ApiCreatedResponse({
+        description: 'account created'
+    })
+    create(@Body() accountDTO: AccountDto) {
+        return this.testService.createAccount(accountDTO);
     }
 }
