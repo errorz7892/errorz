@@ -43,7 +43,7 @@ nest new 專案名稱
 ```
 
 ## 專案結構
-類似MVC的架構
+
 ```bash
 # 基本結構
 - src
@@ -57,10 +57,14 @@ nest new 專案名稱
 * main.ts 程式進入點   
   功能：設定啟動的module與設定port，預設為3000
 * app.controller.ts   
-  功能：對外接口，也可指定渲染頁面，如：mssr的router, swagger
+  功能：對外接口，也可指定渲染頁面，如：mssr的swagger, router
 * app.module.ts       
   功能：包裝controller與service供外部使用，若要重複使用可設定@Gloabl()
 * app.service.ts      
   功能：演算法與邏輯運算、對DB做CRUD，如：mssr的api
+
+## 轉換現有DB為model
+使用套件[typeorm-model-generator] (https://www.npmjs.com/package/typeorm-model-generator)
+
 
 
