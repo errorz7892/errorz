@@ -73,11 +73,6 @@ npm i -g typeorm-model-generator
 ```
 ### 轉換
 ```bash
-# 格式
-typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x
-[password] -e [engine]
-
-# 範例
 typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -o .
 ```
 ### 轉換後的結構
@@ -94,5 +89,4 @@ typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -
 ```
 npm install --save @nestjs/typeorm typeorm mysql
 ```
-
-
+載入TypeORM模組
