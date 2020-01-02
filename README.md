@@ -31,7 +31,11 @@
 ## 安裝&環境設定
 
 ```bash
-$ npm install
+# 安裝nestjs
+npm i -g @nestjs/cli
+
+# 安裝typescript
+$ npm install -g typescript
 ```
 
 ## Running the app
