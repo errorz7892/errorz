@@ -139,7 +139,7 @@ async function bootstrap() {
 }
 bootstrap();
 ```
-**注意**
+*PS*
 [swagger 新舊版 detector 命名對照](https://docs.nestjs.com/recipes/swagger#migration-to-40)
 
 
