@@ -64,7 +64,20 @@ nest new 專案名稱
   功能：演算法與邏輯運算、對DB做CRUD，如：mssr的api
 
 ## 轉換現有DB為model
-使用套件 [typeorm-model-generator](https://www.npmjs.com/package/typeorm-model-generator)
+使用套件[typeorm-model-generator](https://www.npmjs.com/package/typeorm-model-generator)
 
+# 安裝
+```
+npm i -g typeorm-model-generator
+```
+# 轉換
+```
+# 格式
+typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x
+[password] -e [engine]
+
+# 範例
+typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -o .
+```
 
 
