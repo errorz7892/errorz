@@ -46,7 +46,6 @@ nest new 專案名稱
 類似MVC的架構
 ```bash
 # 基本結構
-+ node_modules
 - src
   └ app.controller.ts
   └ app.module.ts
