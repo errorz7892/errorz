@@ -59,7 +59,7 @@ nest new 專案名稱
 * app.controller.ts   
   功能：對外接口，也可指定渲染頁面，如：mssr的router, swagger
 * app.module.ts       
-  功能：包裝controller與service供外部使用，若要重複使用可設定decorator @Gloabl()
+  功能：包裝controller與service供外部使用，若要重複使用可設定@Gloabl()
 * app.service.ts      
   功能：演算法與邏輯運算、對DB做CRUD，如：mssr的api
 
