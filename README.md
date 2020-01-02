@@ -63,6 +63,7 @@ nest new 專案名稱
 * app.service.ts      
   功能：演算法與邏輯運算、對DB做CRUD，如：mssr的api
 
+
 ## 轉換現有DB為model
 使用套件[typeorm-model-generator](https://www.npmjs.com/package/typeorm-model-generator)
 
@@ -87,4 +88,11 @@ typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -
   └ country.ts
   └ countrylanguage.ts
 ```
+
+## 與DB建立連線
+安裝typeorm，以MySQL為例
+```
+npm install --save @nestjs/typeorm typeorm mysql
+```
+
 
