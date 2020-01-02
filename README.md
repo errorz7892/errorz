@@ -89,7 +89,7 @@ typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -
 ```
 npm install --save @nestjs/typeorm typeorm mysql
 ```
-載入TypeORM模組
+載入TypeORM模組，修改app.module.ts
 ```
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
