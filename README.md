@@ -65,7 +65,7 @@ nest new 專案名稱
 
 
 ## 轉換現有DB為model
-使用套件[typeorm-model-generator](https://www.npmjs.com/package/typeorm-model-generator)
+使用套件 [typeorm-model-generator](https://www.npmjs.com/package/typeorm-model-generator)
 
 ### 安裝
 ```
@@ -85,7 +85,7 @@ typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -
 ```
 
 ## 與DB建立連線
-安裝typeorm，以MySQL為例
+安裝typeorm，以MySQL為例，可參考 [官方文件](https://docs.nestjs.com/techniques/database)
 ```
 npm install --save @nestjs/typeorm typeorm mysql
 ```
