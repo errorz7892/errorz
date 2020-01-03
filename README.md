@@ -76,12 +76,13 @@ npm i -g typeorm-model-generator
 typeorm-model-generator -h localhost -d enableets -p 3306 -u root -x 1234 -e mysql -o .
 ```
 ### 轉換後的結構
-以MySQL預設資料表'world'為例
+以資料表enableets為例
 ```bash
 - entities
-  └ city.ts
-  └ country.ts
-  └ countrylanguage.ts
+  └ account.ts
+  └ activeaccount.ts
+  └ adventurelog.ts
+  ...
 ```
 
 ## 與DB建立連線
