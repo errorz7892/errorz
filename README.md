@@ -103,7 +103,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       port: 3306,
       username: 'root',
       password: '1234',
-      database: 'world',
+      database: 'enableets',
       entities: [
          '../entities/*{.ts,.js}'
        ],
@@ -141,7 +141,7 @@ async function bootstrap() {
 bootstrap();
 ```
 *PS*
-[swagger 新舊版 detector 命名對照](https://docs.nestjs.com/recipes/swagger#migration-to-40)
+[swagger 新舊版 detector 命名對照3.x VS 4.x](https://docs.nestjs.com/recipes/swagger#migration-to-40)
 
 
 ## TypeORM CRUD
