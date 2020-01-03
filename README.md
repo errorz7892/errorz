@@ -73,7 +73,7 @@ npm i -g typeorm-model-generator
 ```
 ### 轉換
 ```bash
-typeorm-model-generator -h localhost -d world -p 3306 -u root -x 1234 -e mysql -o .
+typeorm-model-generator -h localhost -d enableets -p 3306 -u root -x 1234 -e mysql -o .
 ```
 ### 轉換後的結構
 以MySQL預設資料表'world'為例
