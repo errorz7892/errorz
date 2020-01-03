@@ -11,15 +11,49 @@ export class TestService {
         private readonly accountRepository: Repository<account>
     ) {}
 
-    public async findAcPwd(acc): Promise<string> {
-        const account = await this.accountRepository.findOne({
+    /**
+     * 查詢密碼
+     * @param acc 帳號
+     */
+    public async findAcPwd(acc:string): Promise<string> {
+        
+        // plan A
+        /*
+        const dbAccountData = await this.accountRepository.findOne({
             account: acc
         });
+        */
 
-        return account.password;
+        // plan B
+        /* 
+        const dbAccountData = await this.accountRepository.findOne({
+            select: ['password'],
+            where: [{ account: acc}]
+        });
+        */
+
+        // plan C
+        const dbAccountData = await this.accountRepository.query(`SELECT * from Account where account = 'super'` );
+
+        return dbAccountData.password;
+
+
     }
 
+    /**
+     * 新建一筆帳號
+     * @param account accountDTO
+     */
     public async createAccount(account: AccountDto): Promise<account> {
         return await this.accountRepository.create(account);
+    }
+
+    /**
+     * 更新帳號
+     * @param id uid
+     * @param acc account資料表
+     */
+    public async updateAccount(id: number, acc: account) {
+        return await this.accountRepository.update(id, acc);
     }
 }
