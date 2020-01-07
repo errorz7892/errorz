@@ -2,11 +2,17 @@ import {BaseEntity,Column,Entity,Index,JoinColumn,JoinTable,ManyToMany,ManyToOne
 
 
 @Entity("account" ,{schema:"enableets" } )
+@Index("account",["account",],{unique:true})
+@Index("qRCode",["qRCode",],{unique:true})
+@Index("classId",["classId",])
+@Index("name",["name",])
+@Index("roleId",["roleId",])
+@Index("originId",["originId",])
 export class account {
 
     @Column("varchar",{ 
         nullable:false,
-        primary:true,
+        unique: true,
         length:128,
         name:"account"
         })
@@ -18,6 +24,13 @@ export class account {
         name:"password"
         })
     password:string | null;
+        
+
+    @PrimaryGeneratedColumn({
+        type:"int", 
+        name:"uid"
+        })
+    uid:number;
         
 
     @Column("varchar",{ 
@@ -115,6 +128,7 @@ export class account {
 
     @Column("varchar",{ 
         nullable:true,
+        unique: true,
         name:"qRCode"
         })
     qRCode:string | null;
@@ -174,5 +188,12 @@ export class account {
         name:"classId"
         })
     classId:number | null;
+        
+
+    @Column("int",{ 
+        nullable:true,
+        name:"originId"
+        })
+    originId:number | null;
         
 }

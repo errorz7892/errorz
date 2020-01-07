@@ -2,74 +2,156 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+***
 
-## Description
+[Nest Docs](https://docs.nestjs.com/)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest Github](https://github.com/nestjs/nest)
 
-## Installation
+## 安裝&環境設定
 
 ```bash
-$ npm install
+# 安裝nestjs
+npm i -g @nestjs/cli
+
+# 安裝typescript
+$ npm install -g typescript
 ```
 
-## Running the app
+## 新建專案
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# 建立
+nest new 專案名稱
+*專案名稱例如: myAPP，在自動建立時會轉換為my_app*
 ```
 
-## Test
+## debug
+修改launch.json
+```bash
+"version": "0.2.0",
+"configurations": [
+  {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Nest Framework",
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+      "args": ["${workspaceFolder}/src/main.ts"],
+      "autoAttachChildProcesses": true
+  }
+]
+```
+
+## 專案結構
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# 基本結構
+- src
+  └ app.controller.ts
+  └ app.module.ts
+  └ app.service.ts
+  └ main.ts
++ test
 ```
 
-## Support
+* main.ts 程式進入點   
+  功能：設定啟動的module與設定port，預設為3000
+* app.controller.ts   
+  功能：對外接口，也可指定渲染頁面，如：mssr的router
+* app.module.ts       
+  功能：包裝controller與service供外部使用，若要重複使用可設定@Gloabl()
+* app.service.ts      
+  功能：演算法與邏輯運算、對DB做CRUD，如：mssr的api
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+## 轉換現有DB為model
+使用套件 [typeorm-model-generator](https://www.npmjs.com/package/typeorm-model-generator)
 
-- Author - [Kamil My?liwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### 安裝
+```
+npm i -g typeorm-model-generator
+```
+### 轉換
+```bash
+typeorm-model-generator -h localhost -d enableets -p 3306 -u root -x 1234 -e mysql -o .
+```
+### 轉換後的結構
+以資料表enableets為例
+```bash
+- entities
+  └ account.ts
+  └ activeaccount.ts
+  └ adventurelog.ts
+  ...
+```
 
-## License
+## 與DB建立連線
+安裝typeorm，以MySQL為例，可參考 [官方文件](https://docs.nestjs.com/techniques/database)
+```
+npm install --save @nestjs/typeorm typeorm mysql
+```
+載入TypeORM模組，修改app.module.ts
+```
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-  Nest is [MIT licensed](LICENSE).
+@Module({
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: '1234',
+      database: 'enableets',
+      entities: [
+         '../entities/*{.ts,.js}'
+       ],
+      synchronize: true,
+    }),
+  ],
+})
+export class AppModule {}
+```
+## 安裝Swagger
+安裝，可參考 [官方文件](https://docs.nestjs.com/recipes/swagger)
+```
+ npm install --save @nestjs/swagger swagger-ui-express
+```
+載入swagger，修改main.ts
+```
+import { NestFactory } from '@nestjs/core';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  const options = new DocumentBuilder()
+    .setTitle('ETS example')
+    .setDescription('The ETS API description')
+    .setVersion('1.0')
+    .addTag('ETS')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+*PS*
+[swagger 新舊版 detector 命名對照3.x VS 4.x](https://docs.nestjs.com/recipes/swagger#migration-to-40)
+
+
+## TypeORM CRUD
+可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
+
+## 可能會用到的Decorators...
+* provider
+* middleware
+* guard
+* Exception filters
+* pipe
+
+## 未完
