@@ -159,7 +159,7 @@ route handler
 * @provider
   
 * @middleware
-  - 攔截request，需呼叫next()才能繼續執行整個流程，例如：以middleware紀錄每個請求的log
+  - 攔截request，需呼叫next()才能繼續執行整個流程，例如：[以middleware紀錄每個請求的log](https://docs.nestjs.com/middleware#functional-middleware)
   - 可多個middleware串聯
   ![image](https://docs.nestjs.com/assets/Middlewares_1.png)
 * @guard
