@@ -153,9 +153,6 @@ Request -> Middleware -> Guard -> Pipe -> route handler
 ```
 
 ## Decorators功能簡介
-* @Provider
-  
-  
 * Middleware
   - 與express的middleware相同
   - 攔截request/response，需呼叫next()才能繼續執行整個流程，例如：[以middleware紀錄每個請求的log](https://docs.nestjs.com/middleware#functional-middleware)
@@ -165,6 +162,7 @@ Request -> Middleware -> Guard -> Pipe -> route handler
 * Guard
   - 與middleware相似攔截請求
   - 與middleware不同，不須呼叫next()
+  - 回傳布林值
   - 如：token、身分驗證
   ![image](https://docs.nestjs.com/assets/Guards_1.png)
   
@@ -188,3 +186,5 @@ Request -> Middleware -> Guard -> Pipe -> route handler
 * Pipe
   - 資料轉型、驗證
   如：swagger欄位驗證
+
+* Provider
