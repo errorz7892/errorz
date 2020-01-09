@@ -113,7 +113,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 })
 export class AppModule {}
 ```
-## 安裝Swagger
+## TypeORM CRUD
+可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
+
+## Redis
+[官方文件](https://docs.nestjs.com/microservices/redis)
+
+## Swagger
 安裝，可參考 [官方文件](https://docs.nestjs.com/recipes/swagger)
 ```
  npm install --save @nestjs/swagger swagger-ui-express
@@ -142,10 +148,6 @@ bootstrap();
 ```
 *PS*
 [swagger 新舊版 detector 命名對照3.x VS 4.x](https://docs.nestjs.com/recipes/swagger#migration-to-40)
-
-
-## TypeORM CRUD
-可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
 
 ## Request流程
 ```
