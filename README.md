@@ -147,11 +147,23 @@ bootstrap();
 ## TypeORM CRUD
 可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
 
-## 可能會用到的Decorators...
-* provider
-* middleware
-* guard
-* Exception filters
-* pipe
+## Request流程
+依序往下
+Request
+Middleware
+Guard
+Pipe
+route handler
+
+## Decorators功能簡介
+* @provider
+  
+* @middleware
+  攔截request，
+  ![image](https://docs.nestjs.com/assets/Middlewares_1.png)
+* @guard
+  router攔截
+* @Exception filters
+* @pipe
 
 ## 未完
