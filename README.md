@@ -175,7 +175,7 @@ route handler
     "message": "Internal server error"
   }
   ```
-  改成下方格式
+  改成熟悉的result最對味
   ```
   {
     "result": "Internal server error",
