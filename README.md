@@ -159,6 +159,7 @@ route handler
 * @provider
   
 * @middleware
+  - 與express的middleware相同
   - 攔截request，需呼叫next()才能繼續執行整個流程，例如：[以middleware紀錄每個請求的log](https://docs.nestjs.com/middleware#functional-middleware)
   - 可多個middleware串聯
   ![image](https://docs.nestjs.com/assets/Middlewares_1.png)
@@ -166,6 +167,20 @@ route handler
   router攔截
   ![image](https://docs.nestjs.com/assets/Guards_1.png)
 * @Exception filters
+  - 攔截例外狀況，可自訂回傳格式
+  如：預設格式
+  ```
+  {
+    "statusCode": 500,
+    "message": "Internal server error"
+  }
+  ```
+  改成下方格式
+  ```
+  {
+    "result": "Internal server error",
+    "data": null,
+    "logAt": "2000-01-01 00:00:00"
+  }
+  ```
 * @pipe
-
-## 未完
