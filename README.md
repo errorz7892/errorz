@@ -190,3 +190,10 @@ Request -> Middleware -> Guard -> Pipe -> route handler
   如：swagger欄位驗證
 
 * **Provider**
+
+## 參考資料
+(https://docs.nestjs.com/first-steps)
+(https://blog.kevinyang.net/tags/NestJS/)
+(https://ithelp.ithome.com.tw/articles/10206693)
+(https://rohanfaiyaz.com/post/nest/)
+
