@@ -148,25 +148,27 @@ bootstrap();
 可參考 [typeorm repository api](https://typeorm.io/#/repository-api/repository-api)
 
 ## Request流程
-依序往下
-Request
-Middleware
-Guard
-Pipe
-route handler
+```
+Request -> Middleware -> Guard -> Pipe -> route handler
+```
 
 ## Decorators功能簡介
-* @provider
+* @Provider
   
-* @middleware
+  
+* Middleware
   - 與express的middleware相同
-  - 攔截request，需呼叫next()才能繼續執行整個流程，例如：[以middleware紀錄每個請求的log](https://docs.nestjs.com/middleware#functional-middleware)
+  - 攔截request/response，需呼叫next()才能繼續執行整個流程，例如：[以middleware紀錄每個請求的log](https://docs.nestjs.com/middleware#functional-middleware)
   - 可多個middleware串聯
   ![image](https://docs.nestjs.com/assets/Middlewares_1.png)
-* @guard
-  router攔截
+  
+* Guard
+  - 與middleware相似攔截請求
+  - 與middleware不同，不須呼叫next()
+  - 如：token、身分驗證
   ![image](https://docs.nestjs.com/assets/Guards_1.png)
-* @Exception filters
+  
+* Exception filters
   - 攔截例外狀況，可自訂回傳格式
   如：預設格式
   ```
@@ -183,4 +185,6 @@ route handler
     "logAt": "2000-01-01 00:00:00"
   }
   ```
-* @pipe
+* Pipe
+  - 資料轉型、驗證
+  如：swagger欄位驗證
