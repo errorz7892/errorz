@@ -155,20 +155,20 @@ Request -> Middleware -> Guard -> Pipe -> route handler
 ```
 
 ## Decorators功能簡介
-* Middleware
+* **Middleware**
   - 與express的middleware相同
   - 攔截request/response，需呼叫next()才能繼續執行整個流程，例如：[以middleware紀錄每個請求的log](https://docs.nestjs.com/middleware#functional-middleware)
   - 可多個middleware串聯
   ![image](https://docs.nestjs.com/assets/Middlewares_1.png)
   
-* Guard
+* **Guard**
   - 與middleware相似攔截請求
   - 與middleware不同，不須呼叫next()
   - 回傳布林值
   - 如：token、身分驗證
   ![image](https://docs.nestjs.com/assets/Guards_1.png)
   
-* Exception filters
+* **Exception filters**
   - 攔截例外狀況，可自訂回傳格式
   如：預設格式
   ```
@@ -185,8 +185,8 @@ Request -> Middleware -> Guard -> Pipe -> route handler
     "logAt": "2000-01-01 00:00:00"
   }
   ```
-* Pipe
+* **Pipe**
   - 資料轉型、驗證
   如：swagger欄位驗證
 
-* Provider
+* **Provider**
