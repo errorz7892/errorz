@@ -10,13 +10,6 @@
 
 ## 安裝&環境設定
 
-``` flow 
-s=start:開始 
-e=end:結束 
-o=operation:操作項 
-s-o-e 
-```
-
 ```bash
 # 安裝nestjs
 npm i -g @nestjs/cli
