@@ -10,7 +10,7 @@
 
 ## 安裝&環境設定
 
-```flow 
+``` flow 
 s=start:開始 
 e=end:結束 
 o=operation:操作項 
