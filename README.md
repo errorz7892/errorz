@@ -1,12 +1,7 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
-```flow 
-s=start:開始 
-e=end:結束 
-o=operation:操作項 
-s-o-e 
-```
+
 ***
 
 [Nest Docs](https://docs.nestjs.com/)
@@ -14,6 +9,13 @@ s-o-e
 [Nest Github](https://github.com/nestjs/nest)
 
 ## 安裝&環境設定
+
+```flow 
+s=start:開始 
+e=end:結束 
+o=operation:操作項 
+s-o-e 
+```
 
 ```bash
 # 安裝nestjs
